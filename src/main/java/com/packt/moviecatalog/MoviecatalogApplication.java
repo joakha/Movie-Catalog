@@ -69,13 +69,6 @@ public class MoviecatalogApplication {
 	
 			}
 
-			for (Movie movie : movieRepository.findAll()) {
-
-				logger.info("The movie is " + movie.getTitle() + " and it's genre is " + movie.getGenre() + ".");
-				logger.info("The review score of the movie was " + movie.getReviews().get(0).getScore());
-	
-			}
-
 		};
 
 	}
