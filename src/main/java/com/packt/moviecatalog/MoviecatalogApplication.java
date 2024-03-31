@@ -22,7 +22,6 @@ public class MoviecatalogApplication {
 
 		SpringApplication.run(MoviecatalogApplication.class, args);
 
-
 	}
 
 	@Bean
@@ -30,6 +29,8 @@ public class MoviecatalogApplication {
 	DirectorRepository directorRepository, ReviewRepository reviewRepository) {
 
 		return (args) -> {
+
+			logger.info("Running the application");
 
 			Director exampleDirector = new Director("Ridley Scott");
 			Director exampleDirector2 = new Director("John Carpenter");
@@ -42,8 +43,6 @@ public class MoviecatalogApplication {
 				logger.info("Director's name is " + director.getName() + ".");
 	
 			}
-
-			logger.info("Running the application");
 
 			Movie exampleMovie = new Movie("Blade Runner", 1982, "Sci-Fi", 117, exampleDirector);
 			Movie exampleMovie2 = new Movie("The Thing", 1982, "Horror", 109, exampleDirector2);
