@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import com.packt.moviecatalog.domain.AppUser;
+import com.packt.moviecatalog.domain.AppUserRepository;
 import com.packt.moviecatalog.domain.Director;
 import com.packt.moviecatalog.domain.DirectorRepository;
 import com.packt.moviecatalog.domain.Movie;
@@ -26,7 +28,8 @@ public class MoviecatalogApplication {
 
 	@Bean
 	public CommandLineRunner runner(MovieRepository movieRepository, 
-	DirectorRepository directorRepository, ReviewRepository reviewRepository) {
+	DirectorRepository directorRepository, ReviewRepository reviewRepository,
+	AppUserRepository appUserRepository) {
 
 		return (args) -> {
 
@@ -67,6 +70,15 @@ public class MoviecatalogApplication {
 				logger.info("The score of the review is " + review.getScore() + " and the comment is \"" + review.getComment() + "\".");
 	
 			}
+
+			AppUser exampleUser = new AppUser("user",
+            "$2a$10$NVM0n8ElaRgg7zWO1CxUdei7vWoPg91Lz2aYavh9.f9q0e4bRadue","USER");
+
+			AppUser examplUser2 = new AppUser("admin",
+			"$2a$10$8cjz47bjbR4Mn8GMg9IZx.vyjhLXR/SKKMSZ9.mP9vpMu0ssKi8GW", "ADMIN");
+
+			appUserRepository.save(exampleUser);
+			appUserRepository.save(examplUser2);
 
 		};
 
