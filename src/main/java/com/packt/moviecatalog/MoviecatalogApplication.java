@@ -47,11 +47,15 @@ public class MoviecatalogApplication {
 	
 			}
 
-			Movie exampleMovie = new Movie("Blade Runner", 1982, "Sci-Fi", 117, exampleDirector);
-			Movie exampleMovie2 = new Movie("The Thing", 1982, "Horror", 109, exampleDirector2);
+			for (int i = 0; i < 7; i++) {
 
-			movieRepository.save(exampleMovie);
-			movieRepository.save(exampleMovie2);
+				Movie exampleMovie = new Movie("Blade Runner", 1982, "Sci-Fi", 117, exampleDirector);
+				Movie exampleMovie2 = new Movie("The Thing", 1982, "Horror", 109, exampleDirector2);
+	
+				movieRepository.save(exampleMovie);
+				movieRepository.save(exampleMovie2);
+
+			}
 
 			for (Movie movie : movieRepository.findAll()) {
 
@@ -59,8 +63,8 @@ public class MoviecatalogApplication {
 	
 			}
 
-			Review exampleReview = new Review(4.5, "Good movie!", exampleMovie);
-			Review exampleReview2 = new Review(3.5, "Great ending!", exampleMovie2);
+			Review exampleReview = new Review(4.5, "Good movie!", movieRepository.findByTitle("Blade Runner").get(0));
+			Review exampleReview2 = new Review(3.5, "Great ending!", movieRepository.findByTitle("The Thing").get(0));
 
 			reviewRepository.save(exampleReview);
 			reviewRepository.save(exampleReview2);
