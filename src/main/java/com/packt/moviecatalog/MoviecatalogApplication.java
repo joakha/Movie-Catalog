@@ -57,6 +57,9 @@ public class MoviecatalogApplication {
 
 			}
 
+			Movie exampleMovie3 = new Movie("Alien", 1979, "Sci-Fi", 200, exampleDirector);
+			movieRepository.save(exampleMovie3);
+
 			for (Movie movie : movieRepository.findAll()) {
 
 				logger.info("The movie is " + movie.getTitle() + " and it's genre is " + movie.getGenre() + ".");
