@@ -1,6 +1,7 @@
 package com.packt.moviecatalog.domain;
 
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +27,7 @@ public class Movie {
     @JoinColumn(name="directorid")
     private Director director;
 
+    @JsonIgnore
     @OneToMany(cascade=CascadeType.ALL, mappedBy="movie")
     private List<Review> reviews;
 
