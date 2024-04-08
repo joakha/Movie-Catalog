@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>List of Directors</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Directors</h1>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Movies</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="director : ${directors}">
+                <td th:text="${director.name}"></td>
+                <td>
+
+                    <div th:each="movie : ${director.movies}">
+                        <p th:text="${movie.title}"></p>
+                    </div>
+
+                </td>
+                <!--                 <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td>
+                <td><a class="btn btn-danger" th:href="@{/deletebook/{id}(id=${book.id})}">Delete</a></td> -->
+            </tr>
+        </table>
+
+        <a class="btn btn-success" href="/frontpage">Back to frontpage</a>
+
+    </div>
+
+</body>
+
+</html>

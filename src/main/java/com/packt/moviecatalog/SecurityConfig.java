@@ -41,11 +41,16 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        
+
         http.cors(withDefaults())
-        .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-        .requestMatchers(antMatcher(HttpMethod.GET, "/api/**")).permitAll().
-        anyRequest().authenticated()).formLogin(withDefaults());
+                .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
+                        .requestMatchers(antMatcher(HttpMethod.GET, "/api/**")).permitAll().anyRequest()
+                        .authenticated())
+                .formLogin(formlogin -> formlogin
+                        .defaultSuccessUrl("/frontpage", true)
+                        .permitAll())
+                .logout(logout -> logout
+                        .permitAll());
 
         return http.build();
     }

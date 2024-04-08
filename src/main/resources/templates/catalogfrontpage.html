@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+    <title>Movie Catalog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Movie Catalog</h1>
+
+        <h2>Welcome <span sec:authentication="name"></span>!</h2>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Movies</th>
+                <th>Directors</th>
+                <th>Reviews</th>
+            </tr>
+            <tr>
+                <td><a href="/movielist">Manage Movies</a></td>
+                <td><a href="/directorlist">Manage Directors</a></td>
+                <td><a href="/reviewlist">Manage Reviews</a></td>
+<!--                 <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td>
+                <td><a class="btn btn-danger" th:href="@{/deletebook/{id}(id=${book.id})}">Delete</a></td> -->
+            </tr>
+        </table>
+
+        <div class="col-md-4" style="padding:20px 0">
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out" class="btn btn-sm btn-danger" />
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

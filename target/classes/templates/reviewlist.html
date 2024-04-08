@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>List of Reviews</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Reviews</h1>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Movie</th>
+                <th>Score</th>
+                <th>Comment</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="review : ${reviews}">
+                <td th:text="${review.movie.title}"></td>
+                <td th:text="${review.score}"></td>
+                <td th:text="${review.comment}"></td>
+                <!--                 <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td>
+                <td><a class="btn btn-danger" th:href="@{/deletebook/{id}(id=${book.id})}">Delete</a></td> -->
+            </tr>
+        </table>
+
+        <a class="btn btn-success" href="/frontpage">Back to frontpage</a>
+
+    </div>
+
+</body>
+
+</html>
