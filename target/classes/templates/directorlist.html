@@ -25,12 +25,12 @@
                 <td>
 
                     <div th:each="movie : ${director.movies}">
-                        <p th:text="${movie.title}"></p>
+                        <li th:text="${movie.title}"></li>
                     </div>
 
                 </td>
-                <!--                 <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td>
-                <td><a class="btn btn-danger" th:href="@{/deletebook/{id}(id=${book.id})}">Delete</a></td> -->
+                <!-- <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td> -->
+                <td><a class="btn btn-danger" th:href="@{/deletedirector/{id}(id=${director.directorid})}">Delete</a></td>
             </tr>
         </table>
 

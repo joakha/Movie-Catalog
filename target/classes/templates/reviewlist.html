@@ -25,8 +25,8 @@
                 <td th:text="${review.movie.title}"></td>
                 <td th:text="${review.score}"></td>
                 <td th:text="${review.comment}"></td>
-                <!--                 <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td>
-                <td><a class="btn btn-danger" th:href="@{/deletebook/{id}(id=${book.id})}">Delete</a></td> -->
+<!--                 <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td> -->
+                <td><a class="btn btn-danger" th:href="@{/deletereview/{id}(id=${review.reviewid})}">Delete</a></td>
             </tr>
         </table>
 

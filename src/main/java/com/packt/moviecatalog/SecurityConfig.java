@@ -45,7 +45,7 @@ public class SecurityConfig {
         http.cors(withDefaults())
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
                         .requestMatchers(antMatcher(HttpMethod.GET, "/api/**")).permitAll().anyRequest()
-                        .authenticated())
+                        .hasRole("ADMIN"))
                 .formLogin(formlogin -> formlogin
                         .defaultSuccessUrl("/frontpage", true)
                         .permitAll())

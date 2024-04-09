@@ -29,8 +29,8 @@
                 <td th:text="${movie.genre}"></td>
                 <td th:text="${movie.length} + ' minutes'">
                 <td th:text="${movie.director.name}"></td>
-<!--                 <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td>
-                <td><a class="btn btn-danger" th:href="@{/deletebook/{id}(id=${book.id})}">Delete</a></td> -->
+                <!-- <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td> -->
+                <td><a class="btn btn-danger" th:href="@{/deletemovie/{id}(id=${movie.movieid})}">Delete</a></td>
             </tr>
         </table>
 

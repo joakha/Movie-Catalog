@@ -3,6 +3,7 @@ package com.packt.moviecatalog.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import com.packt.moviecatalog.domain.MovieRepository;
 import org.springframework.ui.Model;
 
@@ -27,5 +28,12 @@ public class MovieController {
         return "movielist";
 
     }
+
+	@GetMapping("/deletemovie/{id}")
+	public String deleteBook(@PathVariable("id") Long movieid) {
+		movieRepository.deleteById(movieid);
+		return "redirect:/movielist";
+
+	}
 
 }
