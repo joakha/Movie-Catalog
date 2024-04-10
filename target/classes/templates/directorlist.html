@@ -29,12 +29,17 @@
                     </div>
 
                 </td>
-                <!-- <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td> -->
+                <td><a class="btn btn-primary" th:href="@{/editdirector/{id}(id=${director.directorid})}">Edit</a></td>
                 <td><a class="btn btn-danger" th:href="@{/deletedirector/{id}(id=${director.directorid})}">Delete</a></td>
             </tr>
         </table>
 
-        <a class="btn btn-success" href="/frontpage">Back to frontpage</a>
+        <a class="btn btn-success" href="/adddirector">Add a New Director</a>
+
+        <br/>
+        <br/>
+
+        <a class="btn btn-success" href="/frontpage">Back to Frontpage</a>
 
     </div>
 

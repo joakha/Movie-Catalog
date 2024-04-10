@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Movie Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+    <h1 th:text="${editing ? 'Edit Movie' : 'Add a New Movie'}"></h1>
+
+    <form method="post" action="#" th:action="@{/addmovie}" th:object="${movie}">
+
+        <div>
+
+            <input type="hidden" id="movieid" th:field="*{movieid}" />
+
+            <label style="display:block; padding-bottom:10px" for="title">Title: <input type="text" id="title"
+                    th:field="*{title}" /></label>
+
+            <label style="display:block; padding-bottom:10px" for="releaseYear">Year: <input type="number" id="releaseYear"
+                    th:field="*{releaseYear}" /></label>
+
+            <label style="display:block; padding-bottom:10px" for="genre">Genre: <input type="text"
+                    id="genre" th:field="*{genre}" /></label>
+
+            <label style="display:block; padding-bottom:10px" for="length">Length: <input type="number" id="length"
+                    th:field="*{length}" /></label>
+
+            <label style="display:block; padding-bottom:10px" for="directorlist">Director:
+
+                <select id="directorlist" th:field="*{director}">
+
+                    <option th:each="director : ${directors}" th:value="${director.directorid}"
+                        th:text="${director.name}"></option>
+
+                </select></label>
+
+            <input type="submit" value="Save" />
+
+            <input type="reset" value="Reset" />
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>

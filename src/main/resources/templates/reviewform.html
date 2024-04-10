@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Review Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+    <h1 th:text="${editing ? 'Edit Review' : 'Add a New Review'}"></h1>
+
+    <form method="post" action="#" th:action="@{/addreview}" th:object="${review}">
+
+        <div>
+
+            <input type="hidden" id="reviewid" th:field="*{reviewid}" />
+
+            <label style="display:block; padding-bottom:10px" for="score">Score: <input type="number" id="score"
+                    th:field="*{score}" /></label>
+
+            <label style="display:block; padding-bottom:10px" for="comment">Comment: <input type="text"
+                    id="comment" th:field="*{comment}" /></label>
+
+            <label style="display:block; padding-bottom:10px" for="movielist">Movie:
+
+                <select id="movielist" th:field="*{movie}">
+
+                    <option th:each="movie : ${movies}" th:value="${movie.movieid}"
+                        th:text="${movie.title}"></option>
+
+                </select></label>
+
+            <input type="submit" value="Save" />
+
+            <input type="reset" value="Reset" />
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>

@@ -25,12 +25,17 @@
                 <td th:text="${review.movie.title}"></td>
                 <td th:text="${review.score}"></td>
                 <td th:text="${review.comment}"></td>
-<!--                 <td><a class="btn btn-success" th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td> -->
+                <td><a class="btn btn-primary" th:href="@{/editreview/{id}(id=${review.reviewid})}">Edit</a></td>
                 <td><a class="btn btn-danger" th:href="@{/deletereview/{id}(id=${review.reviewid})}">Delete</a></td>
             </tr>
         </table>
 
-        <a class="btn btn-success" href="/frontpage">Back to frontpage</a>
+        <a class="btn btn-success" href="/addreview">Add a New Review</a>
+
+        <br/>
+        <br/>
+
+        <a class="btn btn-success" href="/frontpage">Back to Frontpage</a>
 
     </div>
 

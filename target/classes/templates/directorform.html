@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Director Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <h1 th:text="${editing ? 'Edit Director' : 'Add a New Director'}"></h1>
+
+    <form method="post" action="#" th:action="@{/adddirector}" th:object="${director}">
+
+        <div>
+
+            <input type="hidden" id="directorid" th:field="*{directorid}"/>
+
+            <label style="display:block; padding-bottom:10px" for="name">Name: <input type="text" id="name"
+                th:field="*{name}" /></label>
+
+            <input type="submit" value="Save"/>
+
+            <input type="reset" value="Reset" />
+
+        </div>
+        
+    </form>
+    
+</body>
+</html>
