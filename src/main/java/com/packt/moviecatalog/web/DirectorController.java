@@ -60,7 +60,7 @@ public class DirectorController {
 	}
 
 	@GetMapping("/deletedirector/{id}")
-	public String deleteBook(@PathVariable("id") Long directorid) {
+	public String deleteDirector(@PathVariable("id") Long directorid) {
 
 		directorRepository.deleteById(directorid);
 		return "redirect:/directorlist";

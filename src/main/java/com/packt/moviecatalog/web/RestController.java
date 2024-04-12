@@ -10,6 +10,7 @@ import com.packt.moviecatalog.domain.DirectorRepository;
 import com.packt.moviecatalog.domain.Movie;
 import com.packt.moviecatalog.domain.ReviewRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -30,6 +31,21 @@ public class RestController {
         return (List<Movie>) movieRepository.findAll();
 
     }
+
+    @GetMapping("/api/movies/findByGenre/{genre}")
+    public @ResponseBody List<Movie> getMoviesByGenre(@PathVariable String genre) {
+
+        return (List<Movie>) movieRepository.findByGenre(genre);
+
+    }
+
+    @GetMapping("/api/movies/findByTitle/{title}")
+    public @ResponseBody List<Movie> getMoviesByTitle(@PathVariable String title) {
+
+        return (List<Movie>) movieRepository.findByTitle(title);
+
+    }
+    
 
     @GetMapping("/api/directors")
     public @ResponseBody List<Director> getDirectors() {

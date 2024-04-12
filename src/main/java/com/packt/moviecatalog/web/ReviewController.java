@@ -66,7 +66,7 @@ public class ReviewController {
 	}
 
 	@GetMapping("/deletereview/{id}")
-	public String deleteBook(@PathVariable("id") Long reviewid) {
+	public String deleteReview(@PathVariable("id") Long reviewid) {
 
 		reviewRepository.deleteById(reviewid);
 		return "redirect:/reviewlist";
