@@ -1,9 +1,9 @@
 package com.packt.moviecatalog.domain;
 
 import java.util.List;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MovieRepository extends CrudRepository<Movie, Long> {
+public interface MovieRepository extends JpaRepository<Movie, Long> {
 
     List<Movie> findByTitle(String title);
     

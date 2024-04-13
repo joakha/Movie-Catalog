@@ -9,6 +9,7 @@ import com.packt.moviecatalog.domain.Director;
 import com.packt.moviecatalog.domain.DirectorRepository;
 import com.packt.moviecatalog.domain.Movie;
 import com.packt.moviecatalog.domain.ReviewRepository;
+import com.packt.moviecatalog.service.MovieService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,10 +26,13 @@ public class RestController {
     @Autowired
     private ReviewRepository reviewRepository;
 
-    @GetMapping("/api/movies")
-    public @ResponseBody List<Movie> getMovies() {
+    @Autowired
+    private MovieService movieService;
 
-        return (List<Movie>) movieRepository.findAll();
+    @GetMapping("/api/movies")
+    public @ResponseBody Iterable<Movie> getMovies() {
+
+        return movieService.findAllMoviesSorted();
 
     }
 
