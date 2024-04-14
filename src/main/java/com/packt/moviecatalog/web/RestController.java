@@ -58,10 +58,24 @@ public class RestController {
 
     }
 
+    @GetMapping("/api/directors/findByName/{name}")
+    public @ResponseBody List<Director> getDirectorsByName(@PathVariable String name) {
+
+        return (List<Director>) directorRepository.findByName(name);
+
+    }
+
     @GetMapping("/api/reviews")
     public @ResponseBody List<Review> getReviews() {
 
         return (List<Review>) reviewRepository.findAll();
+
+    }
+
+    @GetMapping("/api/reviews/findByScore/{score}")
+    public @ResponseBody List<Review> getReviewsByScore(@PathVariable double score) {
+
+        return (List<Review>) reviewRepository.findByScore(score);
 
     }
     

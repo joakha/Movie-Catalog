@@ -47,7 +47,7 @@ public class MoviecatalogApplication {
 	
 			}
 
-			for (int i = 0; i < 7; i++) {
+			for (int i = 0; i < 5; i++) {
 
 				Movie exampleMovie = new Movie("Blade Runner", 1982, "Sci-Fi", 117, exampleDirector);
 				Movie exampleMovie2 = new Movie("The Thing", 1982, "Horror", 109, exampleDirector2);
