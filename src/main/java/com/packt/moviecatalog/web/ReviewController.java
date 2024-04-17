@@ -4,16 +4,19 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.packt.moviecatalog.domain.MovieRepository;
 import com.packt.moviecatalog.domain.Review;
 import com.packt.moviecatalog.domain.ReviewRepository;
+import jakarta.validation.Valid;
 
 @Controller
 public class ReviewController {
 
+    //this variable is used to change the h1 element of the reviewform depending on whether a new review is being created or an existing one is being edited
     private boolean editing;
 
     @Autowired
@@ -44,7 +47,16 @@ public class ReviewController {
     }
 
     @PostMapping("/addreview")
-    public String saveReview(Review newReview) {
+    public String saveReview(@Valid Review newReview, BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasErrors()) {
+
+            model.addAttribute("editing", editing);
+            model.addAttribute("movies", movieRepository.findAll());
+
+            return "reviewform";
+
+        }
 
         reviewRepository.save(newReview);
 

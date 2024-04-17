@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Review {
@@ -14,7 +16,10 @@ public class Review {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long reviewid;
 
+    @Min(0)
     private double score;
+
+    @NotBlank(message = "This field should not be empty")
     private String comment;
 
     @ManyToOne

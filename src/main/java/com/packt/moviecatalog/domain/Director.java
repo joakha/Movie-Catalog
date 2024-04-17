@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Director {
@@ -16,6 +17,7 @@ public class Director {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long directorid;
 
+    @NotBlank(message = "This field should not be empty")
     private String name;
 
     @JsonIgnoreProperties("director")

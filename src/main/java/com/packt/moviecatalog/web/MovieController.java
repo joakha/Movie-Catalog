@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.packt.moviecatalog.domain.DirectorRepository;
 import com.packt.moviecatalog.domain.Movie;
 import com.packt.moviecatalog.domain.MovieRepository;
+import jakarta.validation.Valid;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 @Controller
 public class MovieController {
 
+    //this variable is used to change the h1 element of the movieform depending on whether a new movie is being created or an existing one is being edited
     private boolean editing;
 
     @Autowired
@@ -51,7 +54,16 @@ public class MovieController {
     }
 
     @PostMapping("/addmovie")
-    public String saveMovie(Movie newMovie) {
+    public String saveMovie(@Valid Movie newMovie, BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasErrors()) {
+
+            model.addAttribute("editing", editing);
+            model.addAttribute("directors", directorRepository.findAll());
+
+            return "movieform";
+
+        }
 
         movieRepository.save(newMovie);
 
@@ -60,21 +72,21 @@ public class MovieController {
     }
 
     @GetMapping("/editmovie/{id}")
-	public String editMovie(@PathVariable("id") Long movieId, Model model) {
+    public String editMovie(@PathVariable("id") Long movieId, Model model) {
 
-		Optional<Movie> movieToEdit = movieRepository.findById(movieId);
+        Optional<Movie> movieToEdit = movieRepository.findById(movieId);
         editing = true;
         model.addAttribute("editing", editing);
         model.addAttribute("movie", movieToEdit);
         model.addAttribute("directors", directorRepository.findAll());
 
-		return "movieform";
+        return "movieform";
 
-	}
+    }
 
     @GetMapping("/deletemovie/{id}")
     public String deleteMovie(@PathVariable("id") Long movieid) {
-        
+
         movieRepository.deleteById(movieid);
         return "redirect:/movielist";
 

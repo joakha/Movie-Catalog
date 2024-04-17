@@ -18,9 +18,13 @@
 
             <label style="display:block; padding-bottom:10px" for="score">Score: <input type="number" id="score"
                     th:field="*{score}" /></label>
+            
+            <p th:if="${#fields.hasErrors('score')}" th:errors="*{score}">Error</p>
 
             <label style="display:block; padding-bottom:10px" for="comment">Comment: <input type="text"
                     id="comment" th:field="*{comment}" /></label>
+
+            <p th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">Error</p>
 
             <label style="display:block; padding-bottom:10px" for="movielist">Movie:
 

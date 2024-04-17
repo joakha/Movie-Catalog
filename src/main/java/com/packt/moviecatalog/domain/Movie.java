@@ -10,6 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Movie {
@@ -18,9 +20,16 @@ public class Movie {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long movieid;
 
+    @NotBlank(message = "This field should not be empty")
     private String title;
+
+    @Min(1)
     private int releaseYear;
+
+    @NotBlank(message = "This field should not be empty")
     private String genre;
+
+    @Min(1)
     private int length;
 
     @ManyToOne

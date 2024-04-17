@@ -14,8 +14,8 @@
 
             <input type="hidden" id="directorid" th:field="*{directorid}"/>
 
-            <label style="display:block; padding-bottom:10px" for="name">Name: <input type="text" id="name"
-                th:field="*{name}" /></label>
+            <label style="display:block; padding-bottom:10px" for="name">Name: <input type="text" id="name" th:field="*{name}" /></label>
+            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</p>
 
             <input type="submit" value="Save"/>
 
