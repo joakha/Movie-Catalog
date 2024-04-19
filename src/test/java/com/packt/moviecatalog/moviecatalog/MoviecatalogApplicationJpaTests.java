@@ -131,9 +131,9 @@ public class MoviecatalogApplicationJpaTests {
     @Test
     public void findByUsernameReturnAppUser() {
 
-        List<AppUser> users = appUserRepository.findByRole("USER");
+        List<AppUser> users = appUserRepository.findByRole("ADMIN");
         assertThat(users).hasSize(1);
-        assertThat(users.get(0).getUsername()).isEqualTo("user");
+        assertThat(users.get(0).getUsername()).isEqualTo("admin");
 
     }
 
@@ -151,9 +151,9 @@ public class MoviecatalogApplicationJpaTests {
     @Test
     public void deleteAppUser() {
 
-        List<AppUser> users = appUserRepository.findByRole("USER");
+        List<AppUser> users = appUserRepository.findByRole("ADMIN");
         appUserRepository.delete(users.get(0));
-        assertThat(appUserRepository.findByRole("USER")).hasSize(0);
+        assertThat(appUserRepository.findByRole("ADMIN")).hasSize(0);
 
     }
 
