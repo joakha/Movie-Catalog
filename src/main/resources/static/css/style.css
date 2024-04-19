@@ -1,0 +1,117 @@
+body {
+
+    background-color: rgb(58, 58, 58);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+h1 {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5rem;
+    margin: 50px;
+
+}
+
+form {
+
+    border: 3px solid whitesmoke;
+    padding: 100px;
+    border-radius: 10px;
+
+}
+
+label {
+
+    display: block;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+    margin-right: 5px;
+    font-size: 2em;
+
+}
+
+input[type="submit"], input[type="reset"], input[type="number"], select, input[type="button"] {
+
+    padding: 10px;
+    width: 75px;
+    font-family: sans-serif;
+    border-radius: 5px;
+
+}
+
+input[type="submit"] {
+
+    background-color: rgb(110, 211, 155);
+    cursor: pointer;
+
+}
+
+input[type="reset"] {
+
+    background-color: rgb(119, 175, 238);
+    cursor: pointer;
+
+}
+
+input[type="button"] {
+
+    background-color: rgb(235, 106, 106);
+    cursor: pointer;
+
+}
+
+input[type="submit"]:hover {
+
+    background-color: black;
+    color: rgb(110, 211, 155);
+
+}
+
+input[type="reset"]:hover {
+
+    background-color: black;
+    color: rgb(119, 175, 238);
+
+}
+
+input[type="button"]:hover {
+
+    background-color: black;
+    color: rgb(235, 106, 106);
+
+}
+
+input[type="text"], input[type="number"] {
+
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 5px;
+    margin-left: 5px;
+
+}
+
+p {
+
+    font-family: sans-serif;
+    padding-bottom: 10px;
+    color: rgb(235, 106, 106);
+
+}
+
+select {
+
+    width: 200px;
+    text-align: center;
+
+}
+
+a {
+
+    margin-top: 50px;
+
+}

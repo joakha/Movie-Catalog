@@ -4,6 +4,7 @@
 <head>
     <title>Review Form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}" />
 </head>
 
 <body>
@@ -12,36 +13,39 @@
 
     <form method="post" action="#" th:action="@{/addreview}" th:object="${review}">
 
-        <div>
+        <input type="hidden" id="reviewid" th:field="*{reviewid}" />
 
-            <input type="hidden" id="reviewid" th:field="*{reviewid}" />
+        <label for="score">Score: <input type="number" id="score" th:field="*{score}" /></label>
+        <p th:if="${#fields.hasErrors('score')}" th:errors="*{score}">Error</p>
 
-            <label style="display:block; padding-bottom:10px" for="score">Score: <input type="number" id="score"
-                    th:field="*{score}" /></label>
-            
-            <p th:if="${#fields.hasErrors('score')}" th:errors="*{score}">Error</p>
+        <label for="comment">Comment: <input type="text" id="comment" th:field="*{comment}" /></label>
+        <p th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">Error</p>
 
-            <label style="display:block; padding-bottom:10px" for="comment">Comment: <input type="text"
-                    id="comment" th:field="*{comment}" /></label>
+        <label for="movielist">Movie:
 
-            <p th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">Error</p>
+            <select id="movielist" th:field="*{movie}">
 
-            <label style="display:block; padding-bottom:10px" for="movielist">Movie:
+                <option th:each="movie : ${movies}" th:value="${movie.movieid}" th:text="${movie.title}"></option>
 
-                <select id="movielist" th:field="*{movie}">
+            </select></label>
 
-                    <option th:each="movie : ${movies}" th:value="${movie.movieid}"
-                        th:text="${movie.title}"></option>
+        <input type="submit" value="Save" />
 
-                </select></label>
+        <input type="reset" value="Reset" />
 
-            <input type="submit" value="Save" />
-
-            <input type="reset" value="Reset" />
-
-        </div>
+        <input type="button" value="Cancel" onclick="cancel()" />
 
     </form>
+
+    <script>
+
+        const cancel = () => {
+
+            window.location.href ="/reviewlist";
+
+        }
+
+    </script>
 
 </body>
 

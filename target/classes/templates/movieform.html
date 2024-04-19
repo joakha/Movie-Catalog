@@ -4,6 +4,7 @@
 <head>
     <title>Movie Form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}" />
 </head>
 
 <body>
@@ -12,31 +13,21 @@
 
     <form method="post" action="#" th:action="@{/addmovie}" th:object="${movie}">
 
-        <div>
-
             <input type="hidden" id="movieid" th:field="*{movieid}" />
 
-            <label style="display:block; padding-bottom:10px" for="title">Title: <input type="text" id="title"
-                    th:field="*{title}" /></label>
-
+            <label for="title">Title: <input type="text" id="title" th:field="*{title}" /></label>
             <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Error</p>
 
-            <label style="display:block; padding-bottom:10px" for="releaseYear">Year: <input type="number" id="releaseYear"
-                    th:field="*{releaseYear}" /></label>
-
+            <label for="releaseYear">Year: <input type="number" id="releaseYear" th:field="*{releaseYear}" /></label>
             <p th:if="${#fields.hasErrors('releaseYear')}" th:errors="*{releaseYear}">Error</p>
 
-            <label style="display:block; padding-bottom:10px" for="genre">Genre: <input type="text"
-                    id="genre" th:field="*{genre}" /></label>
-
+            <label for="genre">Genre: <input type="text" id="genre" th:field="*{genre}" /></label>
             <p th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}">Error</p>
 
-            <label style="display:block; padding-bottom:10px" for="length">Length: <input type="number" id="length"
-                    th:field="*{length}" /></label>
-
+            <label for="length">Length: <input type="number" id="length" th:field="*{length}" /></label>
             <p th:if="${#fields.hasErrors('length')}" th:errors="*{length}">Error</p>
 
-            <label style="display:block; padding-bottom:10px" for="directorlist">Director:
+            <label for="directorlist">Director:
 
                 <select id="directorlist" th:field="*{director}">
 
@@ -48,8 +39,6 @@
             <input type="submit" value="Save" />
 
             <input type="reset" value="Reset" />
-
-        </div>
 
     </form>
 
