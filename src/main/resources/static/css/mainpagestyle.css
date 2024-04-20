@@ -1,0 +1,108 @@
+body {
+
+    background-color: rgb(58, 58, 58);
+    color: whitesmoke;
+
+}
+
+.content {
+
+    background-color: rgb(58, 58, 58);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5rem;
+    margin: 50px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+
+}
+
+h2 {
+
+    font-family: sans-serif;
+    text-align: center;
+
+}
+
+span {
+
+    color: rgb(110, 211, 155);
+
+}
+
+h3 {
+
+    margin-left: 20px;
+    margin-top: 30px;
+    color: rgb(136, 212, 247);
+
+}
+
+p {
+
+    margin-left: 20px;
+    margin-top: 30px;
+
+}
+
+input[type="button"] {
+
+    background-color: rgb(69, 104, 145);
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    color: whitesmoke;
+    box-shadow: none;
+    margin-left: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+
+}
+
+input[type="button"]:hover {
+
+    background-color: rgb(50, 73, 100);
+
+}
+
+.content-container {
+
+    border: 3px solid whitesmoke;
+    border-radius: 10px;
+    width: 350px;
+    height: 350px;
+    margin: 50px;
+
+}
+
+.content-container:hover {
+
+    background-color: rgb(34, 34, 34);
+
+}
+
+#directors {
+
+    color:rgb(226, 228, 120)
+
+}
+
+#reviews {
+
+    color: rgb(250, 125, 125);
+
+}
+
+.signout {
+
+    display: flex;
+    justify-content: center;
+
+}

@@ -5,36 +5,51 @@
     <title>Movie Catalog</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="/css/mainpagestyle.css" th:href="@{/css/mainpagestyle.css}" />
 </head>
 
 <body>
 
-    <div class="container">
-
-        <h1>Movie Catalog</h1>
-
+        <h1>Movie Catalog Management View</h1>
         <h2>Welcome <span sec:authentication="name"></span>!</h2>
 
-        <table class="table table-striped">
-            <tr>
-                <th>Movies</th>
-                <th>Directors</th>
-                <th>Reviews</th>
-            </tr>
-            <tr>
-                <td><a href="/movielist">Manage Movies</a></td>
-                <td><a href="/directorlist">Manage Directors</a></td>
-                <td><a href="/reviewlist">Manage Reviews</a></td>
-            </tr>
-        </table>
+    <div class="content">
 
-        <div class="col-md-4" style="padding:20px 0">
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out" class="btn btn-sm btn-danger" />
-            </form>
+        <div class="content-container">
+            <h3>Movies</h3>
+            <p>Add, edit and delete movies</p>
+            <input type="button" value="Open movies" onclick="openPage('movie')">
+        </div>
+
+        <div class="content-container">
+            <h3 id="directors">Directors</h3>
+            <p>Add, edit and delete directors</p>
+            <input type="button" value="Open directors" onclick="openPage('director')">
+        </div>
+
+        <div class="content-container">
+            <h3 id="reviews">Reviews</h3>
+            <p>Add, edit and delete reviews</p>
+            <input type="button" value="Open reviews" onclick="openPage('review')">
         </div>
 
     </div>
+
+    <div class="signout">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out" class="btn btn-sm btn-danger" />
+        </form>
+    </div>
+
+    <script>
+
+        const openPage = (keyword) => {
+
+            window.location.href = `/${keyword}list`;
+
+        }
+
+    </script>
 
 </body>
 

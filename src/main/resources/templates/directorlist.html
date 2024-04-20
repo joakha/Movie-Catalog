@@ -30,7 +30,7 @@
 
                 </td>
                 <td><a class="btn btn-primary" th:href="@{/editdirector/{id}(id=${director.directorid})}">Edit</a></td>
-                <td><a class="btn btn-danger" th:href="@{/deletedirector/{id}(id=${director.directorid})}">Delete</a></td>
+                <td><a class="btn btn-danger" th:href="@{/deletedirector/{id}(id=${director.directorid})}" onclick="return confirm('Are you sure? This also deletes associated movies.')">Delete</a></td>
             </tr>
         </table>
 
