@@ -11,20 +11,12 @@ body {
 
 h1 {
 
-    color:rgb(226, 228, 120);
+    color: rgb(250, 125, 125);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2.5rem;
     margin: 50px;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif
-
-}
-
-h2 {
-
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: rgb(226, 228, 120);
 
 }
 
@@ -35,20 +27,17 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
 }
 
 .content-container {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     border: 3px solid whitesmoke;
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
-    width: 550px;
+    width: 350px;
     height: 350px;
 
 }
@@ -59,17 +48,14 @@ h2 {
 
 }
 
-a {
+a:first-child {
 
-    margin-left: 10px;
+    margin-right: 10px;
 
 }
 
-#director {
+p span {
 
-    color: rgb(226, 228, 120);
-    margin-right: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.5rem;
+    color: rgb(250, 125, 125);
 
 }

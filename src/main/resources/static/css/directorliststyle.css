@@ -24,7 +24,7 @@ h2 {
 
     margin-top: 20px;
     margin-bottom: 20px;
-    color: aquamarine;
+    color: rgb(226, 228, 120);
 
 }
 
@@ -67,7 +67,7 @@ a {
 
 #director {
 
-    color: rgb(136, 212, 247);
+    color: rgb(226, 228, 120);
     margin-right: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5rem;

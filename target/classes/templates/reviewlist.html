@@ -5,37 +5,29 @@
     <title>List of Reviews</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="/css/reviewliststyle.css" th:href="@{/css/reviewliststyle.css}" />
 </head>
 
 <body>
 
-    <div class="container">
+    <h1>Reviews</h1>
 
-        <h1>Reviews</h1>
-
-        <table class="table table-striped">
-            <tr>
-                <th>Movie</th>
-                <th>Score</th>
-                <th>Comment</th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr th:each="review : ${reviews}">
-                <td th:text="${review.movie.title}"></td>
-                <td th:text="${review.score}"></td>
-                <td th:text="${review.comment}"></td>
-                <td><a class="btn btn-primary" th:href="@{/editreview/{id}(id=${review.reviewid})}">Edit</a></td>
-                <td><a class="btn btn-danger" th:href="@{/deletereview/{id}(id=${review.reviewid})}">Delete</a></td>
-            </tr>
-        </table>
-
-        <a class="btn btn-success" href="/addreview">Add a New Review</a>
-
-        <br/>
-        <br/>
-
+    <div>
+        <a class="btn btn-success add" href="/addreview">Add a New Review</a>
         <a class="btn btn-success" href="/frontpage">Back to Frontpage</a>
+    </div>
+
+    <div class="content">
+
+        <div class="content-container" th:each="review : ${reviews}">
+
+            <p>Movie: <span th:text="${review.movie.title}"></span></p>
+            <p>Score: <span th:text="${review.score}"></span></p>
+            <p>Comment: <span th:text="${review.comment}"></span></p>
+            <a class="btn btn-primary" th:href="@{/editreview/{id}(id=${review.reviewid})}">Edit</a>
+            <a class="btn btn-danger" th:href="@{/deletereview/{id}(id=${review.reviewid})}">Delete</a>
+
+        </div>
 
     </div>
 
