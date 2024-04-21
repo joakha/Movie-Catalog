@@ -10,8 +10,14 @@
 
 <body>
 
-        <h1>Movie Catalog Management View</h1>
-        <h2>Welcome <span sec:authentication="name"></span>!</h2>
+    <h1>Movie Catalog Management View</h1>
+    <h2>Welcome <span sec:authentication="name"></span>!</h2>
+
+    <div class="signout">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out" class="btn btn-sm btn-danger" />
+        </form>
+    </div>
 
     <div class="content">
 
@@ -33,12 +39,6 @@
             <input type="button" value="Open reviews" onclick="openPage('review')">
         </div>
 
-    </div>
-
-    <div class="signout">
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out" class="btn btn-sm btn-danger" />
-        </form>
     </div>
 
     <script>

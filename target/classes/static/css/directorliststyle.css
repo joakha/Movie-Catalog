@@ -1,0 +1,75 @@
+body {
+
+    background-color: rgb(58, 58, 58);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+h1 {
+
+    color:rgb(226, 228, 120);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5rem;
+    margin: 50px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+
+}
+
+h2 {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: aquamarine;
+
+}
+
+.content {
+
+    background-color: rgb(58, 58, 58);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid whitesmoke;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 550px;
+    height: 350px;
+
+}
+
+.content-container:hover {
+
+    background-color: rgb(34, 34, 34);
+
+}
+
+a {
+
+    margin-left: 10px;
+
+}
+
+#director {
+
+    color: rgb(136, 212, 247);
+    margin-right: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+
+}
