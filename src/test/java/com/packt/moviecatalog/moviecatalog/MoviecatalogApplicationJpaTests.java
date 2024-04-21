@@ -133,7 +133,7 @@ public class MoviecatalogApplicationJpaTests {
 
         List<AppUser> users = appUserRepository.findByRole("ADMIN");
         assertThat(users).hasSize(1);
-        assertThat(users.get(0).getUsername()).isEqualTo("admin");
+        assertThat(users.get(0).getUsername()).isEqualTo("Orava56");
 
     }
 
@@ -142,7 +142,7 @@ public class MoviecatalogApplicationJpaTests {
 
         AppUser user = new AppUser("testUser", "$2a$12$corF2r9EVdeYDi1qczkOh.fI3pFCGZjzvMV.kRTV1h/WZ/COlZ/De", "USER");
         appUserRepository.save(user);
-        AppUser newUser = appUserRepository.findByRole("USER").get(1);
+        AppUser newUser = appUserRepository.findByRole("USER").get(0);
         assertThat(newUser.getId()).isNotNull();
         assertThat(newUser.getUsername()).isEqualTo("testUser");
 
