@@ -24,7 +24,7 @@
             <label for="genre">Genre: <input type="text" id="genre" th:field="*{genre}" /></label>
             <p th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}">Error</p>
 
-            <label for="length">Length: <input type="number" id="length" th:field="*{length}" /></label>
+            <label for="length">Length: <input type="number" id="length" th:field="*{length}" /> minutes</label>
             <p th:if="${#fields.hasErrors('length')}" th:errors="*{length}">Error</p>
 
             <label for="directorlist">Director:
