@@ -5,41 +5,31 @@
     <title>List of Movies</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="/css/liststyle.css" th:href="@{/css/liststyle.css}" />
 </head>
 
 <body>
 
-    <div class="container">
+    <h1>Movies</h1>
 
-        <h1>Movies</h1>
-
-        <table class="table table-striped">
-            <tr>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Genre</th>
-                <th>Length</th>
-                <th>Director</th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr th:each="movie : ${movies}">
-                <td th:text="${movie.title}"></td>
-                <td th:text="${movie.releaseYear}"></td>
-                <td th:text="${movie.genre}"></td>
-                <td th:text="${movie.length} + ' minutes'">
-                <td th:text="${movie.director.name}"></td>
-                <td><a class="btn btn-primary" th:href="@{/editmovie/{id}(id=${movie.movieid})}">Edit</a></td>
-                <td><a class="btn btn-danger" th:href="@{/deletemovie/{id}(id=${movie.movieid})}">Delete</a></td>
-            </tr>
-        </table>
-
-        <a class="btn btn-success" href="/addmovie">Add a New Movie</a>
-
-        <br/>
-        <br/>
-
+    <div>
+        <a class="btn btn-success add" href="/addmovie">Add a New Movie</a>
         <a class="btn btn-success" href="/frontpage">Back to Frontpage</a>
+    </div>
+
+    <div class="content">
+
+        <div class="content-container" th:each="movie : ${movies}">
+
+            <p>Title: <span th:text="${movie.title}"></span></p>
+            <p>Director: <span th:text="${movie.director.name}"></span></p>
+            <p>Released: <span th:text="${movie.releaseYear}"></span></p>
+            <p>Genre: <span th:text="${movie.genre}"></span></p>
+            <p>Length: <span th:text="${movie.length}"></span> minutes</p>
+            <a class="btn btn-primary" th:href="@{/editmovie/{id}(id=${movie.movieid})}">Edit</a>
+            <a class="btn btn-danger" th:href="@{/deletemovie/{id}(id=${movie.movieid})}">Delete</a>
+
+        </div>
 
     </div>
 

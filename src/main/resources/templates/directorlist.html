@@ -23,15 +23,15 @@
 
             <div>
                 <span id="director" th:text="${director.name}"></span>
-                <td><a class="btn btn-primary" th:href="@{/editdirector/{id}(id=${director.directorid})}">Edit</a></td>
-                <td><a class="btn btn-danger" th:href="@{/deletedirector/{id}(id=${director.directorid})}"
-                        onclick="return confirm('Are you sure? This also deletes associated movies.')">Delete</a></td>
+                <a class="btn btn-primary" th:href="@{/editdirector/{id}(id=${director.directorid})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/deletedirector/{id}(id=${director.directorid})}"
+                        onclick="return confirm('Are you sure? This also deletes associated movies.')">Delete</a>
             </div>
 
             <h2>Movies:</h2>
 
             <div th:each="movie : ${director.movies}">
-                <li th:text="${movie.title}"></li>
+                <li th:text="${movie.title} + ' ' + ${movie.releaseYear}"></li>
             </div>
 
         </div>
