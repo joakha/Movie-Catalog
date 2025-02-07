@@ -36,16 +36,16 @@ There is a dockerfile included so the application can deployed on a hosting plat
     ```
 
 3. Environment Variables:
-    1. Create a file called .env to the cloned project root
+    1. Create a file called .env to the cloned project root.
     2. Add following variables and their values for the application server port, database url, database
-       username and password respectively: SERVER_PORT, DB_URL, DB_USERNAME_ DB_PASSWORD
+       username and password respectively: SERVER_PORT, DB_URL, DB_USERNAME_, DB_PASSWORD.
 
-4. Start development server the way you prefer
+4. Start development server the way you prefer.
 
 ## Frontend
 
-- There is a public frontend which is meant to be used alongside this application
-- Frontend repository: https://github.com/joakha/movie-catalog-front-ts
+- There is a public frontend which is meant to be used alongside this application.
+- Frontend repository: https://github.com/joakha/movie-catalog-front-ts.
 
 ## Dependencies
 
