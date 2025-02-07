@@ -35,7 +35,9 @@ public class MoviecatalogApplication {
 
 			logger.info("Running the application");
 
-/*  			Director exampleDirector = new Director("Ridley Scott");
+			//code below is used to generate test data automatically
+
+/*  		Director exampleDirector = new Director("Ridley Scott");
 			Director exampleDirector2 = new Director("John Carpenter");
 			Director exampleDirector3 = new Director("David Fincher");
 			Director exampleDirector4 = new Director("Denis Villeneuve");
@@ -91,8 +93,8 @@ public class MoviecatalogApplication {
 			AppUser adminUser = new AppUser("Orava56",
 					"$2a$12$qKgRlFPnn78eOc.JDTYWYesQENzbjWpxzFcX/Bf87fFxtAlRDwIPe", "ADMIN");
 
-			appUserRepository.save(adminUser); */
-
+			appUserRepository.save(adminUser);
+ */
 		};
 
 	}
